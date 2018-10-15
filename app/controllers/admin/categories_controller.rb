@@ -1,9 +1,6 @@
 class Admin::CategoriesController < ApplicationController
 
-  #def show
-   # @category = Category.find(params[:id])
-    #@products = @category.products.order(created_at: :desc)
-  #end
+  http_basic_authenticate_with name: ENV["HTTP_USERNAME"], password: ENV["HTTP_PASSWORD"]
 
   def index 
   	@categories = Category.order(:name).all
