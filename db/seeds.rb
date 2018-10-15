@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Seeding Data ..."
-
+require "faker"
 # Helper functions
 def open_asset(file_name)
   File.open(Rails.root.join('db', 'seed_assets', file_name))
@@ -130,7 +130,30 @@ cat3.products.create!({
   image: open_asset('furniture3.jpg'),
   quantity: 23,
   price: 2_483.75
-})
-
-
+})  
+    ##USERS
+     puts "Re-creating Sample Users ..."
+     User.destroy_all
+     (0..5).each do |i|
+      User.create!({
+        email: Faker::Internet.email,
+        first_name: Faker::StarTrek.villain,
+        last_name: Faker::StarTrek.villain,
+        password: "I'm a digest!!",
+        password_confirmation: "I'm a digest!!"
+      })
+    end
+     ## REVIEWS
+     puts "Re-creating Sample Reviews ..."
+     Review.destroy_all
+     (0..50).each do |i|
+      Review.create!({
+        product: Product.all.sample,
+        user: User.all.sample,
+        description: Faker::Hipster.paragraph(4),
+        rating: rand(0..5)
+      })
+    end
 puts "DONE!"
+
+
