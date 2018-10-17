@@ -22,6 +22,7 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(
       :rating,
       :description,
+      :user
     )
   end
  end

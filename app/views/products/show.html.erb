@@ -23,26 +23,27 @@
         </dl>
       </div>
     </div>
-
-   </div>
-     <% if current_user.present? %>
-       <div class="row">
-         <div class="col-sm-8">
-            <%= form_for(:review, url:"/products/#{@product.id}/reviews") do |form| %>
-              <dl class="dl-horizontal">
-                <dt><%= form.label :rating %></dt>
-                <dd><%= form.select :rating, [1,2,3,4,5], class: 'form-control' %></dd>
-                <dt><br><%= form.label :description %></dt>
-                <dd><br><%= form.text_area :description, class: 'form-control' %></dd>
-                <dt></dt>
-                <dd><br><%= form.submit "Send review" , class: 'btn btn-primary' %></dd>
-              </dl>
-            <% end %>
+   <% if current_user.present? %>
+       <div class="input_review">
+          <%= form_for(:review, url:"/products/#{@product.id}/reviews") do |form| %>
+        <div>
+         <table>
+            <tr>
+              <td><%= form.label :rating %></td>
+              <td><%= form.select :rating, [1,2,3,4,5], class: 'form-control' %></td>
+            </tr>
+            <tr>
+              <td><%= form.label :description %></td>
+              <td><%= form.text_area :description, class: 'form-control text-area' %></td>
+            </tr>
+         </table>
+         <span ><%= form.submit "Send review" , class: 'btn btn-primary' %></span>
         </div>
+        <% end %>
       </div>
-     <% end %>
-     <div class="row">
-         <% if @reviews.present? %>
+   <% end %>
+     <div class="show_reviews">
+        <% if @reviews.present? %>
           <% @reviews.each do |review| %>
             <%= render 'review', review: review  %>
           <% end %>
