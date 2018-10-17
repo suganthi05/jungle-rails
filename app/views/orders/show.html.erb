@@ -1,16 +1,13 @@
 <section class="orders-show">
-
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
   </header>
-
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
     <h5> Your registered email id: "<%= @order.email %>"</h5>
   </div>
-
-   <div class="panel panel-default items">
-      <table class="table table-bordered">
+  <div class="panel panel-default items">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th colspan="2">Product</th>
@@ -23,8 +20,8 @@
         <% total_amount = 0 %>
         <% line_items = LineItem.where(order_id: @order.id) %>
         <% line_items.each do |item| %>
-          <% total_amount += item.total_price %>
-          <%= render 'item', item: item  %>
+        <% total_amount += item.total_price %>
+        <%= render 'item', item: item  %>
         <% end %>
       </tbody>
       <tfoot>
@@ -39,13 +36,10 @@
       </tfoot>
     </table>
   </div>
-
   <% if current_user %>
-    <% UserMailer.order_email(current_user.first_name, current_user.email, @order, total_amount).deliver_now %>
+  <% UserMailer.order_email(current_user.first_name, current_user.email, @order, total_amount).deliver_now %>
   <% elsif %>
-    <% UserMailer.order_email("customer", "hisuguj@gmail.com", @order, total_amount).deliver_now %>
+  <% UserMailer.order_email("customer", "hisuguj@gmail.com", @order, total_amount).deliver_now %>
   <% end %>
-
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
 </section>

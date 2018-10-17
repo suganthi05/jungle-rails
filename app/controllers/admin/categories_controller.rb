@@ -1,5 +1,5 @@
 class Admin::CategoriesController < ApplicationController
-
+  # Admin User Authentication, username and password is retrived from .env file
   http_basic_authenticate_with name: ENV["HTTP_USERNAME"], password: ENV["HTTP_PASSWORD"]
 
   def index 
