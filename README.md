@@ -66,3 +66,31 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+
+## Screenshots
+
+### Home Screen
+!["Home Screen"](https://github.com/suganthi05/jungle-rails/blob/master/docs/01_home.png?raw=true)
+### Product Sold Out Badge
+!["Product Sold Out"](https://github.com/suganthi05/jungle-rails/blob/master/docs/02_Sold_out.png?raw=true)
+### Product with zero quantity
+!["Product with zero quantity"](https://github.com/suganthi05/jungle-rails/blob/master/docs/03_Quantity_Zero.png?raw=true)
+### Add new categories
+!["Add new categories"](https://github.com/suganthi05/jungle-rails/blob/master/docs/04_Add_New_Categories.png?raw=true)
+### Admin - Categories list
+!["Admin - Categories list"](https://github.com/suganthi05/jungle-rails/blob/master/docs/05_Admin_Categories.png?raw=true)
+### Sign Up form
+!["Sign Up form"](https://github.com/suganthi05/jungle-rails/blob/master/docs/06_Sign_Up.png?raw=true)
+### Order Cart
+!["Order Cart"](https://github.com/suganthi05/jungle-rails/blob/master/docs/07_Order_Cart.png?raw=true)
+### Stripe
+!["Stripe"](https://github.com/suganthi05/jungle-rails/blob/master/docs/08_Stripe.png?raw=true)
+### Order Confirmation
+!["Order Confirmation"](https://github.com/suganthi05/jungle-rails/blob/master/docs/09_Order_Confirmation.png?raw=true)
+### Admin Login
+!["Admin Login"](https://github.com/suganthi05/jungle-rails/blob/master/docs/10_Admin_login.png?raw=true)
+### Empty Cart
+!["Empty Cart"](https://github.com/suganthi05/jungle-rails/blob/master/docs/11_Empty_Cart.png?raw=true)
+### Review Screen
+!["Review Screen"](https://github.com/suganthi05/jungle-rails/blob/master/docs/12_Review_Screen.png?raw=true)
